@@ -1,0 +1,59 @@
+{
+  "name": "@silverstripe/reactstrap-confirm",
+  "version": "0.0.1",
+  "description": "Confirmation dialogues with reactstrap modals",
+  "main": "dist/confirm.js",
+  "scripts": {
+    "lint": "eslint src stories tests",
+    "lint-fix": "eslint --fix src stories tests",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "react",
+    "reactstrap",
+    "confirm"
+  ],
+  "author": "Guy Marriott <guy@silverstripe.com>",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "reactstrap": "^8.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@silverstripe/eslint-config": "^0.0.5",
+    "@silverstripe/webpack-config": "^1.1.0",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-notes": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
+    "jest": "^24.8.0"
+  },
+  "jest": {
+    "transform": {
+      ".*": "babel-jest"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": 10
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ]
+  }
+}
