@@ -2,7 +2,7 @@
   "name": "@silverstripe/reactstrap-confirm",
   "version": "0.0.1",
   "description": "Confirmation dialogues with reactstrap modals",
-  "main": "dist/confirm.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint src stories tests",
     "lint-fix": "eslint --fix src stories tests",
