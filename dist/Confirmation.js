@@ -1,9 +1,13 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
 exports.default = void 0;
+
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -11,48 +15,53 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _reactstrap = require("reactstrap");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
 /**
  * Renders a confirmation modal immediately with an onConfirm action. Used with `lib/confirm`.
  */
-class Confirmation extends _react.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+var Confirmation =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inheritsLoose2.default)(Confirmation, _Component);
+
+  function Confirmation(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.state = {
       isOpen: true
     };
+    return _this;
   }
 
-  render() {
-    const {
-      onConfirm,
-      onCancel,
-      title,
-      body,
-      confirmLabel,
-      dismissLabel,
-      showDismissButton
-    } = this.props;
-    const {
-      isOpen
-    } = this.state;
+  var _proto = Confirmation.prototype;
 
-    const handleToggle = () => {
+  _proto.render = function render() {
+    var _this2 = this;
+
+    var _this$props = this.props,
+        onConfirm = _this$props.onConfirm,
+        onCancel = _this$props.onCancel,
+        title = _this$props.title,
+        body = _this$props.body,
+        confirmLabel = _this$props.confirmLabel,
+        dismissLabel = _this$props.dismissLabel,
+        showDismissButton = _this$props.showDismissButton;
+    var isOpen = this.state.isOpen;
+
+    var handleToggle = function handleToggle() {
       if (typeof onCancel === 'function') {
         onCancel();
       }
 
-      this.setState({
+      _this2.setState({
         isOpen: false
       });
     };
 
-    const handleConfirm = () => {
+    var handleConfirm = function handleConfirm() {
       onConfirm();
-      this.setState({
+
+      _this2.setState({
         isOpen: false
       });
     };
@@ -68,9 +77,10 @@ class Confirmation extends _react.Component {
     }, confirmLabel), (showDismissButton || !title) && _react.default.createElement(_reactstrap.Button, {
       onClick: handleToggle
     }, dismissLabel || 'Cancel')));
-  }
+  };
 
-}
+  return Confirmation;
+}(_react.Component);
 
 Confirmation.propTypes = {
   onConfirm: _propTypes.default.func.isRequired,

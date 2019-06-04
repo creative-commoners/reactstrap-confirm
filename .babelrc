@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "loose": true,
+        "shippedProposals": true,
+        "modules": "commonjs",
+        "targets": {
+          "ie": 9
+        }
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}

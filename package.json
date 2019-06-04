@@ -20,6 +20,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@babel/cli": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "bootstrap": "^4.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -44,18 +45,5 @@
     "transform": {
       ".*": "babel-jest"
     }
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": 10
-          }
-        }
-      ],
-      "@babel/preset-react"
-    ]
   }
 }

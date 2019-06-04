@@ -1,9 +1,11 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
 exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -11,24 +13,36 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _Confirmation = _interopRequireDefault(require("./Confirmation"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var confirmation = function confirmation(message, additionalProps, mountNode, unmountDelay, Component) {
+  if (additionalProps === void 0) {
+    additionalProps = {};
+  }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+  if (mountNode === void 0) {
+    mountNode = document.body;
+  }
 
-const confirmation = (message, additionalProps = {}, mountNode = document.body, unmountDelay = 350, Component) => {
-  const ConfirmComponent = Component || _Confirmation.default;
-  const wrapper = mountNode.appendChild(document.createElement('div'));
-  return new Promise(resolve => {
-    const createCompleteHandler = result => () => {
-      resolve(result);
-      setTimeout(() => {
-        _reactDom.default.unmountComponentAtNode(wrapper);
+  if (unmountDelay === void 0) {
+    unmountDelay = 350;
+  }
 
-        setTimeout(() => mountNode.removeChild(wrapper));
-      }, unmountDelay);
+  var ConfirmComponent = Component || _Confirmation.default;
+  var wrapper = mountNode.appendChild(document.createElement('div'));
+  return new Promise(function (resolve) {
+    var createCompleteHandler = function createCompleteHandler(result) {
+      return function () {
+        resolve(result);
+        setTimeout(function () {
+          _reactDom.default.unmountComponentAtNode(wrapper);
+
+          setTimeout(function () {
+            return mountNode.removeChild(wrapper);
+          });
+        }, unmountDelay);
+      };
     };
 
-    _reactDom.default.render(_react.default.createElement(ConfirmComponent, _extends({}, additionalProps, {
+    _reactDom.default.render(_react.default.createElement(ConfirmComponent, (0, _extends2.default)({}, additionalProps, {
       onConfirm: createCompleteHandler(true),
       onCancel: createCompleteHandler(false),
       body: message
