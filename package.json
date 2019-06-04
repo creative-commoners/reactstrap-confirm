@@ -2,10 +2,11 @@
   "name": "@silverstripe/reactstrap-confirm",
   "version": "0.0.1",
   "description": "Confirmation dialogues with reactstrap modals",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "lint": "eslint src stories tests",
     "lint-fix": "eslint --fix src stories tests",
+    "build": "yarn lint && yarn test && rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -22,7 +23,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "reactstrap": "^8.0.0"
+    "reactstrap": "^8.0.0",
+    "rollup": "^1.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

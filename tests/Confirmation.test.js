@@ -1,3 +1,5 @@
+/* global jest describe beforeEach expect */
+
 import React from 'react';
 
 import Confirmation from '../src/Confirmation';

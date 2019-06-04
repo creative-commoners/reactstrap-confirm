@@ -1,3 +1,5 @@
+/* global jest describe beforeEach expect */
+
 import confirm from '../src/confirm';
 import Confirmation from '../src/Confirmation';
 
