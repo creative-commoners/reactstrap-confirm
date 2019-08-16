@@ -20,6 +20,7 @@ class Confirmation extends Component {
       title,
       body,
       confirmLabel,
+      confirmColor,
       dismissLabel,
       showDismissButton
     } = this.props;
@@ -47,7 +48,7 @@ class Confirmation extends Component {
           {body}
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={handleConfirm}>{confirmLabel}</Button>
+          <Button color={confirmColor} onClick={handleConfirm}>{confirmLabel}</Button>
           {
             (showDismissButton || !title)
             && <Button onClick={handleToggle}>{dismissLabel || 'Cancel'}</Button>
@@ -64,11 +65,13 @@ Confirmation.propTypes = {
   onCancel: PropTypes.func,
   title: PropTypes.string,
   confirmLabel: PropTypes.string,
+  confirmColor: PropTypes.string,
   dismissLabel: PropTypes.string,
 };
 
 Confirmation.defaultProps = {
   confirmLabel: 'Confirm',
+  confirmColor: 'primary',
 };
 
 

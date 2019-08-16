@@ -44,6 +44,7 @@ function (_Component) {
         title = _this$props.title,
         body = _this$props.body,
         confirmLabel = _this$props.confirmLabel,
+        confirmColor = _this$props.confirmColor,
         dismissLabel = _this$props.dismissLabel,
         showDismissButton = _this$props.showDismissButton;
     var isOpen = this.state.isOpen;
@@ -72,7 +73,7 @@ function (_Component) {
     }, title && _react.default.createElement(_reactstrap.ModalHeader, {
       toggle: handleToggle
     }, title), _react.default.createElement(_reactstrap.ModalBody, null, body), _react.default.createElement(_reactstrap.ModalFooter, null, _react.default.createElement(_reactstrap.Button, {
-      color: "primary",
+      color: confirmColor,
       onClick: handleConfirm
     }, confirmLabel), (showDismissButton || !title) && _react.default.createElement(_reactstrap.Button, {
       onClick: handleToggle
@@ -88,10 +89,12 @@ Confirmation.propTypes = {
   onCancel: _propTypes.default.func,
   title: _propTypes.default.string,
   confirmLabel: _propTypes.default.string,
+  confirmColor: _propTypes.default.string,
   dismissLabel: _propTypes.default.string
 };
 Confirmation.defaultProps = {
-  confirmLabel: 'Confirm'
+  confirmLabel: 'Confirm',
+  confirmColor: 'primary'
 };
 var _default = Confirmation;
 exports.default = _default;
