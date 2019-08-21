@@ -1,6 +1,6 @@
 {
   "name": "@silverstripe/reactstrap-confirm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Confirmation dialogues with reactstrap modals",
   "main": "dist/index.js",
   "scripts": {
